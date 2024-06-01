@@ -27,7 +27,6 @@ modules:
       - bat
       - bemenu
       - distrobox
-      - docker
       - exa
       - fd-find
       - fzf
