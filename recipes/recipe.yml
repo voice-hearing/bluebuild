@@ -4,7 +4,7 @@ name: ublue-sway
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/bluefin-dx
 image-version: 40 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -19,14 +19,45 @@ modules:
   - type: rpm-ostree
     repos:
       # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://packages.twingate.com/rpm/
     install:
       # - micro
-      # - starship
+      - starship
+      - bat
+      - bemenu
+      - distrobox
+      - docker
+      - exa
+      - fd-find
+      - fzf
+      - gnome-shell-extension-pop-shell
+      - grim
+      - j4-dmenu-desktop
+      - kitty
+      - light
+      - mako
+      - neovim
+      - nmap-ncat
+      - playerctl
+      - python3-i3ipc
+      - ripgrep
+      - slurp
+      - sway
+      - swayidle
+      - thefuck
+      - twingate-latest
+      - waybar
+      - wezterm
+      - wireguard-tools 
+      - wlsunset
+      - wl-clipboard
+      - wofi
+      - zsh
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
-      # - firefox
-      # - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -36,8 +67,18 @@ modules:
       # repo-name: flathub
       # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
-        # - org.mozilla.firefox
-        # - org.gnome.Loupe
+        - org.mozilla.firefox
+        - re.sonny.Junction
+        - com.google.Chrome
+        - com.discordapp.Discord
+        - com.spotify.Client
+        - md.obsidian.Obsidian
+        - org.telegram.desktop
+        - com.visualstudio.code
+        - io.missioncenter.MissionCenter
+        - io.github.flattool.Warehouse
+        - com.github.tchx84.Flatseal
+        - org.gnome.Extensions
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
