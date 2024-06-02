@@ -34,7 +34,7 @@ modules:
       - grim
       - j4-dmenu-desktop
       - kitty
-      - light
+      - brightnessctl
       - mako
       - neovim
       - nmap-ncat
