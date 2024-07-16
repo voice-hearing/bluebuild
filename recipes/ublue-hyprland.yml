@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: ublue-sway
+name: ublue-hyprland
 # description will be included in the image's metadata
 description: This is my personal OS image following bluefin-dx latest.
 
@@ -9,3 +9,4 @@ image-version: latest
 
 modules:
     - from-file: common-modules.yml
+    - from-file: hyprland-packages.yml

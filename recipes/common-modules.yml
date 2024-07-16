@@ -12,51 +12,47 @@ modules:
       - https://mise.jdx.dev/rpm/mise.repo
       - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
     install:
-      # - micro
-      # - starship
+      # CLI
       - mise
       - bat
-      - bemenu
-      - distrobox
-      - exa
-      - fd-find
-      - fzf
-      - gnome-shell-extension-pop-shell
-      - grim
-      - j4-dmenu-desktop
-      - kitty
-      - brightnessctl
-      - mako
       - neovim
       - nmap-ncat
       - playerctl
       - python3-i3ipc
       - ripgrep
-      - slurp
-      - sway
-      - swayidle
+      - distrobox
+      - exa
+      - fd-find
+      - fzf
       - thefuck
+
+      # Misc
+      - kitty
       - twingate-latest
-      - waybar
       - wezterm
       - wireguard-tools 
+      - zsh
+
+      # Misc GUI
+      - gnome-shell-extension-pop-shell
+
+      # Window Manager
+      - bemenu
+      - brightnessctl
+      - grim
+      - j4-dmenu-desktop
+      - mako
+      - slurp
+      - waybar
       - wlsunset
       - wl-clipboard
       - wofi
-      - zsh
-    remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
-      # - firefox
-      # - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - xdg-desktop-portal
+      - xdg-desktop-portal-gtk
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
-      # If no repo information is specified, Flathub will be used by default
-      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      # repo-name: flathub
-      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
         - org.mozilla.firefox
         - re.sonny.Junction
@@ -72,12 +68,6 @@ modules:
         - org.gnome.Extensions
         - org.libreoffice.LibreOffice
         - com.slack.Slack
-        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
-      # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
-      # only normal flatpak applications are (like Floorp Lightning web browser in this example).
-      # Installing different branches of the same Flatpak is not supported.
-      remove:
-      # - org.gnome.eog
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
