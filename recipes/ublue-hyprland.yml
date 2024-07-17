@@ -12,5 +12,5 @@ modules:
     - from-file: hyprland-packages.yml
 
     - type: script
-    scripts:
-      - removeanimewallpapers.sh
+      scripts:
+        - removeanimewallpapers.sh
