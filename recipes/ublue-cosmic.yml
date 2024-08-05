@@ -1,0 +1,26 @@
+# image will be published to ghcr.io/<user>/<name>
+name: ublue-hyprland
+# description will be included in the image's metadata
+description: This is my personal OS image following bluefin-dx latest.
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bluefin-dx
+image-version: latest
+
+modules:
+    - from-file: common-modules.yml
+    - from-file: cosmic-packages.yml
+
+    - type: systemd
+      system:
+        enabled:
+          - tuned-ppd
+          - cosmic-greeter
+          - greetd-workaround
+        disabled:
+          - gdm
+          - sddm
+
+    - type: script
+      snippets:
+        - "mkdir -p /var/tmp && chmod -R 1777 /var/tmp"
