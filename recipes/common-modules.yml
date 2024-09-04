@@ -23,6 +23,7 @@ modules:
       - fd-find
       - fzf
       - thefuck
+      - zoxide
 
       # Misc
       - kitty
