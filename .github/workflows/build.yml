@@ -22,7 +22,7 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here 
-          - ublue-cosmic.yml
+          # - ublue-cosmic.yml
           - ublue-hyprland.yml
           - ublue-sway.yml
     steps:
