@@ -192,7 +192,7 @@ modules:
 
   - type: script
     scripts:
-      - settheming.sh
+      # - settheming.sh
       - addbrewjustimport.sh
 
   - type: default-flatpaks
