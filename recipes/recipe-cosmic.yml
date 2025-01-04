@@ -9,7 +9,7 @@ image-version: latest
 
 modules:
     - from-file: common-modules.yml
-    - from-file: cosmic-packages.yml
+    - from-file: common/cosmic-modules.yml
 
     - type: systemd
       system:
