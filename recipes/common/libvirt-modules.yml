@@ -7,11 +7,12 @@ modules:
 
   - type: rpm-ostree
     install:
-      - virt-install
-      - edk-ovmf
+      - edk2-ovmf
+      - guestfs-tools
       - libvirt
       - libvirt-nss
       - osbuild-selinux
+      - qemu
       - qemu-char-spice
       - qemu-device-display-virtio-gpu
       - qemu-device-display-virtio-vga
@@ -20,11 +21,10 @@ modules:
       - qemu-system-x86-core
       - qemu-user-binfmt
       - qemu-user-static
-      - qemu
+      - virt-install
       - virt-manager
-      - virt-viewer
-      - guestfs-tools
       - virt-top
+      - virt-viewer
 
   - type: systemd
     system:
