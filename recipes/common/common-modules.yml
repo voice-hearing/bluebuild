@@ -46,6 +46,7 @@ modules:
     repos:
       - https://mise.jdx.dev/rpm/mise.repo
       - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
     install:
     # launcher
       - rofi-wayland
@@ -65,6 +66,7 @@ modules:
       - fish
       - fprintd-pam
       - fzf
+      - ghostty
       - gnome-disk-utility
       - google-noto-emoji-fonts
       - headsetcontrol
