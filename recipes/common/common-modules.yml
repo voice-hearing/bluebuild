@@ -84,6 +84,7 @@ modules:
       - qt6-qtwayland
       - ripgrep
       - thefuck
+      - tmux
       - tuned-ppd
       - twingate-latest
       - unrar
