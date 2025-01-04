@@ -11,17 +11,17 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
     install:
       # CLI
-      - mise
       - bat
+      - distrobox
+      - exa
+      - fd-find
+      - fzf
+      - mise
       - neovim
       - nmap-ncat
       - playerctl
       - python3-i3ipc
       - ripgrep
-      - distrobox
-      - exa
-      - fd-find
-      - fzf
       - thefuck
       - zoxide
 

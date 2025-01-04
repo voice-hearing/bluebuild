@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
 # image will be published to ghcr.io/<user>/<name>
-name: ublue-sway
+name: ublue-gnome-sway
 # description will be included in the image's metadata
 description: This is my personal OS image following bluefin-dx latest.
 
