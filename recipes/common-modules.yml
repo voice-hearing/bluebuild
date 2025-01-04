@@ -68,6 +68,7 @@ modules:
         - org.gnome.Extensions
         - org.libreoffice.LibreOffice
         - com.slack.Slack
+    user: {}
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
