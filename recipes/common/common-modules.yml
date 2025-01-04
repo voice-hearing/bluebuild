@@ -62,6 +62,7 @@ modules:
       - distrobox
       - exa
       - fd-find
+      - fish
       - fprintd-pam
       - fzf
       - gnome-disk-utility
