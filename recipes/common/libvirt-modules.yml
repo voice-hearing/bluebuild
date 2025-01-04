@@ -1,0 +1,32 @@
+# installs virtualization 
+modules:
+  - type: files
+    files:
+      - source: libvirt/usr
+        destination: /usr
+
+  - type: rpm-ostree
+    install:
+      - virt-install
+      - edk-ovmf
+      - libvirt
+      - libvirt-nss
+      - osbuild-selinux
+      - qemu-char-spice
+      - qemu-device-display-virtio-gpu
+      - qemu-device-display-virtio-vga
+      - qemu-device-usb-redirect
+      - qemu-img
+      - qemu-system-x86-core
+      - qemu-user-binfmt
+      - qemu-user-static
+      - qemu
+      - virt-manager
+      - virt-viewer
+      - guestfs-tools
+      - virt-top
+
+  - type: systemd
+    system:
+      enabled:
+        - libvirtd.service
