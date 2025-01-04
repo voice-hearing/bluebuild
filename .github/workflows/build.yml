@@ -30,7 +30,7 @@ jobs:
           # - ublue-cosmic.yml
           - recipe-sway.yml
           - ublue-gnome-sway.yml
-          - ublue-hyprland.yml
+          # - ublue-hyprland.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
