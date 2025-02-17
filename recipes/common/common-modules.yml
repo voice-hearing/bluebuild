@@ -157,6 +157,9 @@ modules:
       - breeze-icon-theme 
       - papirus-icon-theme
 
+    # Apps
+      - 1password
+
   - type: script
     scripts:
       - installproprietarypackages.sh
