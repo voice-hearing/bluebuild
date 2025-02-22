@@ -1,11 +1,12 @@
-- type: fonts
-  fonts:
-    nerd-fonts:
-      - FiraCode
-      - Hack
-      - SourceCodePro
-      - JetBrainsMono
-      - NerdFontsSymbolsOnly
-    google-fonts:
-      - Roboto
-      - Open Sans
+modules:
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+        - Hack
+        - SourceCodePro
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
