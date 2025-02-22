@@ -1,40 +1,4 @@
 modules:
-  - type: containerfile
-    snippets:
-      - COPY --from=ghcr.io/ublue-os/akmods:main-41 /rpms /tmp/rpms
-      - RUN find /tmp/rpms
-      - RUN rpm -q ublue-os-akmods-addons || rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods-addons*.rpm
-
-  - type: containerfile
-    snippets:
-      - COPY --from=ghcr.io/ublue-os/main-kernel:41 /tmp/rpms /tmp/rpms/kernel
-
-  - type: script
-    scripts:
-      - installsignedkernel.sh
-
-  - type: containerfile
-    snippets:
-      - RUN rpm-ostree install just powerstat
-      - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /
-      - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /
-      - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /
-      - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-luks.noarch.rpm /
-      - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-just.noarch.rpm /
-      - RUN rpm -ivh /ublue-os-udev-rules.noarch.rpm
-      - RUN rpm -ivh /ublue-os-update-services.noarch.rpm
-      - RUN rpm -ivh /ublue-os-signing.noarch.rpm
-      - RUN rpm -ivh /ublue-os-luks.noarch.rpm
-      - RUN rpm -ivh /ublue-os-just.noarch.rpm
-
-
-  - type: script
-    scripts:
-      - installandroidudev.sh
-      - installrpmfusion.sh
-      - ensureautoupdates.sh
-      - fixupstreamicdloaderbug.sh
-
   - type: files
     files:
       - source: system/usr
@@ -50,11 +14,6 @@ modules:
     keys:
       - https://downloads.1password.com/linux/keys/1password.asc
     install:
-    # launcher
-      - rofi-wayland
-      - bemenu
-      - j4-dmenu-desktop
-      - wofi
 
     # environment
       - alsa-firmware
@@ -137,20 +96,6 @@ modules:
       - gvfs-archive
       - android-tools
 
-    # screenshot
-      - slurp
-      - grim
-
-    # display
-      - wlr-randr
-      - wlsunset
-      - brightnessctl
-      - kanshi
-
-    # notifications
-      - dunst
-      - mako
-
     # theme and GUI
       - fontawesome-fonts-all
       - gnome-themes-extra
@@ -191,18 +136,9 @@ modules:
       - libswresample-free  
       - libswscale-free  
 
-  - type: script
-    scripts:
-      - removeunusedrepos.sh
-
   - type: gschema-overrides
     include:
       - zz1-secureblue-theming.gschema.override
-
-  - type: script
-    scripts:
-      # - settheming.sh
-      - addbrewjustimport.sh
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)

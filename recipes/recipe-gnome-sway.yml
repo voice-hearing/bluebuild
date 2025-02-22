@@ -10,5 +10,6 @@ base-image: ghcr.io/ublue-os/bluefin-dx
 image-version: latest
 
 modules:
-  - from-file: common-modules.yml
+  # - from-file: common-modules.yml
+  - from-file: common/common-modules.yml
   - from-file: common/sway-modules.yml
