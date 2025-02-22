@@ -27,14 +27,6 @@ modules:
       - RUN rpm -ivh /ublue-os-luks.noarch.rpm
       - RUN rpm -ivh /ublue-os-just.noarch.rpm
 
-
-  - type: script
-    scripts:
-      - installandroidudev.sh
-      - installrpmfusion.sh
-      - ensureautoupdates.sh
-      - fixupstreamicdloaderbug.sh
-
   - type: files
     files:
       - source: system/usr

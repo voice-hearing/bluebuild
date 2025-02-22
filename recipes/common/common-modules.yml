@@ -107,6 +107,14 @@ modules:
     # Apps
       - 1password
 
+
+  - type: script
+    scripts:
+      - installandroidudev.sh
+      - installrpmfusion.sh
+      - ensureautoupdates.sh
+      - fixupstreamicdloaderbug.sh
+
   - type: script
     scripts:
       - installproprietarypackages.sh
