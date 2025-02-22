@@ -27,13 +27,6 @@ modules:
       - RUN rpm -ivh /ublue-os-luks.noarch.rpm
       - RUN rpm -ivh /ublue-os-just.noarch.rpm
 
-  - type: files
-    files:
-      - source: system/usr
-        destination: /usr
-      - source: system/etc
-        destination: /etc
-
   - type: script
     scripts:
       - installproprietarypackages.sh
