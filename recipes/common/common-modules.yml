@@ -1,8 +1,6 @@
 modules:
   - type: files
     files:
-      - source: system/usr
-        destination: /usr
       - source: system/etc
         destination: /etc
 
@@ -15,27 +13,31 @@ modules:
       - https://downloads.1password.com/linux/keys/1password.asc
     install:
 
+    # userspace
+      # - bat
+      # - exa
+      # - fd-find
+      # - fzf
+      # - distrobox
+      # - mise
+      # - neovim
+      # - ripgrep
+      # - thefuck
+      # - tmux
+      # - zoxide
+
     # environment
       - alsa-firmware
-      - bat
       - dbus-daemon
       - dbus-tools
       - ddcutil
-      - distrobox
-      - exa
-      - fd-find
       - fish
       - fprintd-pam
-      - fzf
-      - ghostty
       - gnome-disk-utility
       - google-noto-emoji-fonts
       - headsetcontrol
       - just
-      - kitty
       - mediainfo
-      - mise
-      - neovim
       - nmap-ncat
       - openssl
       - p7zip
@@ -45,9 +47,6 @@ modules:
       - python3-i3ipc
       - qt5-qtwayland
       - qt6-qtwayland
-      - ripgrep
-      - thefuck
-      - tmux
       - tuned-ppd
       - twingate-latest
       - unrar
@@ -62,7 +61,6 @@ modules:
       - xfce-polkit 
       - xorg-x11-server-Xwayland
       - zsh
-      - zoxide
       
     # sound
       - wireplumber
@@ -105,48 +103,9 @@ modules:
       - papirus-icon-theme
 
     # Apps
+      - kitty
+      - ghostty
       - 1password
-
-
-  - type: script
-    scripts:
-      - installandroidudev.sh
-      - installrpmfusion.sh
-      - ensureautoupdates.sh
-      - fixupstreamicdloaderbug.sh
-
-  - type: script
-    scripts:
-      - installproprietarypackages.sh
-
-  - type: rpm-ostree
-    install:
-      - heif-pixbuf-loader
-      - ffmpeg
-      - ffmpeg-libs
-      - ffmpegthumbnailer
-      - pipewire-libs-extra
-      - libfdk-aac
-      - gstreamer1-plugins-bad
-      - gstreamer1-plugins-ugly 
-    remove:
-      - gstreamer1-plugins-bad-free
-      - gstreamer1-plugins-bad-free-libs
-      - gstreamer1-plugins-ugly-free
-      - fdk-aac-free
-      - ffmpeg-free
-      - libavcodec-free  
-      - libavdevice-free
-      - libavfilter-free
-      - libavformat-free  
-      - libavutil-free  
-      - libpostproc-free  
-      - libswresample-free  
-      - libswscale-free  
-
-  - type: gschema-overrides
-    include:
-      - zz1-secureblue-theming.gschema.override
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)

@@ -9,6 +9,13 @@ modules:
     snippets:
       - COPY --from=ghcr.io/ublue-os/main-kernel:41 /tmp/rpms /tmp/rpms/kernel
 
+  - type: files
+    files:
+      - source: sway/etc
+        destination: /etc
+      - source: sway/usr
+        destination: /usr
+
   - type: script
     scripts:
       - installsignedkernel.sh
@@ -39,5 +46,45 @@ modules:
     scripts:
       # - settheming.sh
       - addbrewjustimport.sh
+
+  - type: script
+    scripts:
+      - installandroidudev.sh
+      - installrpmfusion.sh
+      - ensureautoupdates.sh
+      - fixupstreamicdloaderbug.sh
+
+  - type: script
+    scripts:
+      - installproprietarypackages.sh
+
+  - type: rpm-ostree
+    install:
+      - heif-pixbuf-loader
+      - ffmpeg
+      - ffmpeg-libs
+      - ffmpegthumbnailer
+      - pipewire-libs-extra
+      - libfdk-aac
+      - gstreamer1-plugins-bad
+      - gstreamer1-plugins-ugly 
+    remove:
+      - gstreamer1-plugins-bad-free
+      - gstreamer1-plugins-bad-free-libs
+      - gstreamer1-plugins-ugly-free
+      - fdk-aac-free
+      - ffmpeg-free
+      - libavcodec-free  
+      - libavdevice-free
+      - libavfilter-free
+      - libavformat-free  
+      - libavutil-free  
+      - libpostproc-free  
+      - libswresample-free  
+      - libswscale-free  
+
+  - type: gschema-overrides
+    include:
+      - zz1-secureblue-theming.gschema.override
 
   # - type: signing # this sets up the proper policy & signing files for signed images to work fully
