@@ -105,7 +105,6 @@ modules:
     # Apps
       - kitty
       - ghostty
-      - 1password
 
   - type: script
     scripts:
