@@ -18,12 +18,18 @@ modules:
       - fzf
       - mise
       - neovim
+      - rust 
+      - fortune-mod 
+      - cargo 
+      - zeitfetch 
+      - neoumutt
       - nmap-ncat
       - playerctl
       - python3-i3ipc
       - ripgrep
       - thefuck
       - zoxide
+      - gparted
 
       # Misc
       - kitty
@@ -54,20 +60,50 @@ modules:
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
       install:
-        - org.mozilla.firefox
-        - re.sonny.Junction
-        - com.google.Chrome
-        - com.discordapp.Discord
-        - com.spotify.Client
-        - md.obsidian.Obsidian
-        - org.telegram.desktop
-        - com.visualstudio.code
-        - io.missioncenter.MissionCenter
-        - io.github.flattool.Warehouse
-        - com.github.tchx84.Flatseal
+        - com.github.tchx84.Flatseal 
+        - it.mijorus.gearlever 
+        - app/org.mozilla.Thunderbird/x86_64/stable 
+        - app/io.github.dvlv.boxbuddyrs/x86_64/stable 
+        - org.gnome.Boxes 
+        - app/io.github.flattool.Warehouse/x86_64/stable 
+        - org.fedoraproject.MediaWriter 
+        - com.calibre_ebook.calibre 
+        - com.visualstudio.code 
+        - com.visualstudio.code-oss 
+        - com.vscodium.codium 
+        - io.gitlab.librewolf-community 
+        - com.ulaa.Ulaa 
+        - app.devsuite.Ptyxis 
+        - com.github.Murmele.Gittyup 
+        - com.neatdecisions.Detwinner 
+        - com.zettlr.Zettlr 
+        - io.github.sxyazi.yazi 
+        - org.gnome.DejaDup 
+        - org.qutebrowser.qutebrowser 
+        - org.onlyoffice.desktopeditors 
+        - com.opera.Opera 
+        - io.mpv.Mpv 
+        - md.obsidian.Obsidian 
+        - no.mifi.losslesscut
+        - org.freefilesync.FreeFileSync 
+        - org.jdownloader.JDownloader 
+        - io.kapsa.drive 
+        - org.kde.kdenlive 
+        - net.mullvad.MullvadBrowser 
+        - org.videolan.VLC 
+        - com.microsoft.Edge 
+        - org.standardnotes.standardnotes 
+        - com.notesnook.Notesnook 
+        - us.zoom.Zoom 
+        - org.audacityteam.Audacity 
+        - org.gimp.GIMP 
+        - org.inkscape.Inkscape 
+        - com.dec05eba.gpu_screen_recorder 
+        - org.kde.kdenlive 
+        - com.belmoussaoui.Obfuscate 
+        - com.discordapp.Discord 
+        - org.telegram.desktop 
         - org.gnome.Extensions
-        - org.libreoffice.LibreOffice
-        - com.slack.Slack
     user: {}
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
